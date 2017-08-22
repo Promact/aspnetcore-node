@@ -3,7 +3,7 @@ FROM microsoft/aspnetcore:2
 ENV NODE_VERSION 8.4.0
 
 # set up node
-RUN buildDeps='xz-utils gpg' \
+RUN buildDeps='xz-utils gnupg2 dirmngr' \
     && set -x \
     && apt-get update && apt-get install -y $buildDeps bzip2 libfontconfig --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
