@@ -20,7 +20,7 @@ fi
 PHANTOM_JS="$PHANTOM_VERSION-linux-$ARCH"
 
 cd ~
-wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+curl -SLO https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
 tar xvjf $PHANTOM_JS.tar.bz2
 
 mv $PHANTOM_JS /usr/local/share
