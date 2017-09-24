@@ -1,11 +1,11 @@
 FROM microsoft/aspnetcore:2
 
-ENV NODE_VERSION 8.4.0
+ENV NODE_VERSION 8.5.0
 
 # set up node
 RUN buildDeps='xz-utils gnupg2 dirmngr' \
     && set -x \
-    && apt-get update && apt-get install -y $buildDeps bzip2 libfontconfig --no-install-recommends \
+    && apt-get update && apt-get install -y $buildDeps bzip2 libfontconfig libfreetype6 --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && for key in \
     9554F04D7259F04124DE6B476D5A82AC7E37093B \
@@ -29,6 +29,10 @@ RUN buildDeps='xz-utils gnupg2 dirmngr' \
     && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
     && apt-get purge -y --auto-remove $buildDeps \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs    
+
+COPY install_phantomjs.sh /app/install_phantomjs.sh
+
+RUN chmod +x /app/install_phantomjs.sh && bash /app/install_phantomjs.sh
 
 COPY package.json /app/package.json
 
