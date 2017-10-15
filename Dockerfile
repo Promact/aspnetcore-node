@@ -1,6 +1,6 @@
-FROM microsoft/aspnetcore:1.1.2
+FROM microsoft/aspnetcore:1.1.4
 
-ENV NODE_VERSION 8.4.0
+ENV NODE_VERSION 8.7.0
 
 # Install keys required for node
 RUN set -ex \
