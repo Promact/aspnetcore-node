@@ -22,7 +22,7 @@ RUN set -ex \
 # set up node
 RUN buildDeps='xz-utils' \
     && set -x \
-    && apt-get update && apt-get install -y $buildDeps bzip2 libfontconfig --no-install-recommends \
+    && apt-get update && apt-get install -y $buildDeps bzip2 libfontconfig libgdiplus wkhtmltopdf --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
     && curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
