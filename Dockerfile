@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore:1.1.4
+FROM microsoft/aspnetcore:1.1
 
 ENV NODE_VERSION 8.7.0
 
