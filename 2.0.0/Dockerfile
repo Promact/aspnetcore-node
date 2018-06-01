@@ -1,6 +1,6 @@
 FROM microsoft/aspnetcore:2
 
-ENV NODE_VERSION 8.5.0
+ENV NODE_VERSION 8.11.2
 
 # set up node
 RUN buildDeps='xz-utils gnupg2 dirmngr' \
