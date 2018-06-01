@@ -1,4 +1,4 @@
-FROM microsoft/aspnetcore:2.1-aspnetcore-runtime
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
 
 ENV NODE_VERSION 8.11.2
 
