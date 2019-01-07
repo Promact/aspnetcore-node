@@ -1,4 +1,4 @@
-FROM microsoft/2.2-aspnetcore-runtime
+FROM microsoft/dotnet:2.2-aspnetcore-runtime
 
 ENV NODE_VERSION 10.15.0
 ENV NODE_DOWNLOAD_SHA f0b4ff9a74cbc0106bbf3ee7715f970101ac5b1bbe814404d7a0673d1da9f674  
