@@ -10,6 +10,8 @@ RUN curl -SL "$NODE_DOWNLOAD_URL" --output nodejs.tar.gz \
     && rm nodejs.tar.gz \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs    
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+
+COPY package.json .
+RUN npm install --production
 
 
